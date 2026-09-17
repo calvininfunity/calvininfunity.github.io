@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calvin Chan: Product & Delivery Portfolio</title>
+  <meta name="description" content="Product and delivery portfolio for Calvin Chan, covering mobile products, platforms, workflow systems, technical delivery, QA and cross-functional execution." />
+  <meta property="og:title" content="Calvin Chan: Product & Delivery Portfolio" />
+  <meta property="og:description" content="Product, product operations and technical delivery evidence across mobile products, live platforms, workflow systems and cross-functional execution." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7f8;
+      --paper: #ffffff;
+      --ink: #122029;
+      --muted: #596a73;
+      --line: #d9e2e6;
+      --accent: #0f6f72;
+      --accent-2: #3158a8;
+      --accent-soft: #e5f3f2;
+      --warm: #f5efe6;
+      --shadow: 0 20px 54px rgba(24, 42, 52, .09);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0 0, rgba(15, 111, 114, .12), transparent 31rem),
+        radial-gradient(circle at 100% 0, rgba(49, 88, 168, .10), transparent 28rem),
+        var(--bg);
+      line-height: 1.58;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { width: min(1140px, calc(100% - 36px)); margin: 0 auto; }
+
+    header { padding: 60px 0 30px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .7fr);
+      gap: 38px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(52px, 7.5vw, 92px);
+      line-height: .98;
+      letter-spacing: -0.045em;
+      font-weight: 780;
+    }
+
+    .hero-label {
+      margin: 16px 0 0;
+      font-size: clamp(23px, 3.1vw, 38px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 750;
+      color: var(--accent);
+    }
+
+    .lead {
+      margin: 19px 0 0;
+      max-width: 790px;
+      color: var(--muted);
+      font-size: clamp(17px, 1.8vw, 21px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      color: var(--ink);
+      font-weight: 700;
+      box-shadow: 0 8px 22px rgba(20,36,58,.05);
+    }
+
+    .button.primary {
+      border: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+    }
+
+    .panel {
+      border: 1px solid rgba(217,226,230,.95);
+      background: rgba(255,255,255,.83);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card {
+      min-height: 300px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      right: -70px;
+      top: -70px;
+      background: radial-gradient(circle, rgba(15,111,114,.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .kicker {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-card h2 {
+      margin: 12px 0 0;
+      font-size: clamp(29px, 3.4vw, 43px);
+      line-height: 1.04;
+      letter-spacing: -0.042em;
+    }
+
+    .hero-card p { margin: 14px 0 0; color: var(--muted); }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .pills span {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      font-size: 13px;
+      font-weight: 700;
+      color: #33474f;
+    }
+
+    main { padding: 10px 0 64px; }
+
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      margin: 20px 0 38px;
+    }
+
+    .proof-item {
+      padding: 23px;
+      border-right: 1px solid var(--line);
+      background: rgba(255,255,255,.64);
+    }
+
+    .proof-item:last-child { border-right: 0; }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 29px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+    }
+
+    .proof-item span { color: var(--muted); font-size: 14px; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 26px;
+      margin: 43px 0 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 45px);
+      line-height: 1;
+      letter-spacing: -0.042em;
+    }
+
+    .section-note {
+      margin: 0;
+      max-width: 650px;
+      color: var(--muted);
+    }
+
+    .case-grid { display: grid; gap: 18px; }
+
+    .case {
+      display: grid;
+      grid-template-columns: minmax(230px, .38fr) minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    .case-side {
+      padding: 25px;
+      background: linear-gradient(150deg, var(--accent-soft), #eef2fb);
+      border-right: 1px solid var(--line);
+    }
+
+    .case-side.warm { background: linear-gradient(150deg, var(--warm), #f8f5ef); }
+
+    .case-side h3 {
+      margin: 9px 0 7px;
+      font-size: 25px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .case-role {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .case-side .metric {
+      margin-top: 22px;
+      font-size: 27px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .case-side .metric-note {
+      margin-top: 7px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .case-body { padding: 26px 28px; }
+
+    .case-body h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -.01em;
+    }
+
+    .case-body p { margin: 0; color: var(--muted); }
+
+    .case-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 21px;
+    }
+
+    .mini {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mini strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--ink);
+    }
+
+    .mini span { color: var(--muted); font-size: 14px; }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .cap {
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.78);
+    }
+
+    .cap h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .cap p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .product {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(20,36,58,.06);
+    }
+
+    .thumb {
+      display: block;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, var(--accent-soft), #eef2fb);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(10, 18, 28, .76);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .product-body { padding: 17px; }
+
+    .product-body h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.16;
+      letter-spacing: -0.025em;
+    }
+
+    .product-body p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+
+    .text-link { font-size: 13px; font-weight: 750; }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .language {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.76);
+    }
+
+    .language strong { display: block; font-size: 17px; }
+    .language span { color: var(--muted); font-size: 14px; }
+
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .fine-print {
+      padding-top: 19px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-card { min-height: 0; }
+      .proof { grid-template-columns: repeat(2, 1fr); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .case { grid-template-columns: 1fr; }
+      .case-side { border-right: 0; border-bottom: 1px solid var(--line); }
+      .product-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      header { padding-top: 42px; }
+      .proof, .cap-grid, .case-columns, .product-grid, .language-grid { grid-template-columns: 1fr; }
+      .proof-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Calvin Chan</h1>
+        <p class="hero-label">Product & Delivery Lead | Mobile Products, Platforms & Operations</p>
+        <p class="lead">I turn product ideas, workflow problems and technical constraints into shippable releases. My background spans consumer mobile products, live platforms, cross-functional delivery, product operations and engineering leadership, with hands-on ownership from definition through QA, release and iteration.</p>
+        <nav class="actions" aria-label="Primary links">
+          <a class="button primary" href="mailto:calvin@infunity.com">calvin@infunity.com</a>
+          <a class="button" href="https://www.linkedin.com/in/calvinchanht/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button" href="https://infunity.com/" target="_blank" rel="noopener noreferrer">Infunity</a>
+          <a class="button" href="https://calvinchanht.github.io/" target="_blank" rel="noopener noreferrer">Game & Mobile Portfolio</a>
+        </nav>
+      </div>
+
+      <aside class="hero-card panel" aria-label="Product delivery focus">
+        <div>
+          <div class="kicker">Product delivery scope</div>
+          <h2>From ambiguous requirements to live product</h2>
+          <p>Recent zero-to-live platform delivery sits on top of a longer history leading mobile products, engineering teams, release readiness and cross-functional execution.</p>
+        </div>
+        <div class="pills" aria-label="Experience tags">
+          <span>Product definition</span>
+          <span>Roadmaps & backlogs</span>
+          <span>QA / UAT / release</span>
+          <span>Technical delivery</span>
+          <span>Workflow operations</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="proof panel" aria-label="Selected evidence">
+      <div class="proof-item"><strong>~2 months</strong><span>Infunity from zero to a live product</span></div>
+      <div class="proof-item"><strong>15+</strong><span>Mobile games and apps featured by the Apple App Store and Google Play</span></div>
+      <div class="proof-item"><strong>Up to 3</strong><span>Products managed concurrently during senior mobile production</span></div>
+      <div class="proof-item"><strong>20+</strong><span>Developers led earlier across simultaneous mobile and software products</span></div>
+    </section>
+
+    <section id="case-studies" aria-labelledby="case-title">
+      <div class="section-head">
+        <div><h2 id="case-title">Selected case studies</h2></div>
+        <p class="section-note">Official job titles are preserved. The product lens below explains the work, scope and transferable delivery evidence without relabelling game roles as something they were not.</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case panel">
+          <div class="case-side">
+            <div class="kicker">Live platform delivery</div>
+            <h3>Infunity</h3>
+            <div class="case-role">Founder & Product Lead | Jan 2026–Present</div>
+            <div class="metric">~2 months</div>
+            <div class="metric-note">zero to live product</div>
+          </div>
+          <div class="case-body">
+            <h4>Product challenge</h4>
+            <p>Turn a broad platform concept into a usable live product across onboarding, identity and trust, marketplace and service workflows, payments, permissions, moderation, admin tooling, APIs and integrations.</p>
+            <div class="case-columns">
+              <div class="mini"><strong>Definition</strong><span>Product direction, workflow design, roadmap decisions, prioritisation, requirements, user stories and acceptance criteria.</span></div>
+              <div class="mini"><strong>Delivery</strong><span>Backlogs, milestones, QA/UAT, release checks, issue triage, handover and live iteration.</span></div>
+              <div class="mini"><strong>Decision support</strong><span>SQL/database understanding, workflow friction, issue patterns, KPI/ROI thinking and technical feasibility.</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case panel">
+          <div class="case-side warm">
+            <div class="kicker">Consumer mobile portfolio</div>
+            <h3>Animoca Brands / Outblaze</h3>
+            <div class="case-role">Senior Game Producer | Jun 2014–Jan 2020</div>
+            <div class="metric">10+ people</div>
+            <div class="metric-note">cross-functional mobile team</div>
+          </div>
+          <div class="case-body">
+            <h4>Product lens</h4>
+            <p>Led delivery across multiple consumer mobile products, including games and apps, while managing up to three products concurrently and reporting directly to CEO/COO leadership.</p>
+            <div class="case-columns">
+              <div class="mini"><strong>Portfolio delivery</strong><span>15+ mobile games and apps featured by the Apple App Store and Google Play, with a sustained 2009–2019 featured-title record.</span></div>
+              <div class="mini"><strong>Product judgement</strong><span>Audience and market fit, engagement and progression, monetisation awareness, feature prioritisation and release quality.</span></div>
+              <div class="mini"><strong>Stakeholders</strong><span>Cross-functional teams plus licensed-IP and commercial stakeholders including Mattel, Sanrio and Tsuburaya.</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case panel">
+          <div class="case-side">
+            <div class="kicker">Technical product delivery</div>
+            <h3>Outblaze</h3>
+            <div class="case-role">Senior Lead Programmer | Apr 2008–May 2014</div>
+            <div class="metric">20+ developers</div>
+            <div class="metric-note">multi-product engineering leadership</div>
+          </div>
+          <div class="case-body">
+            <h4>Technical leverage</h4>
+            <p>Led a large programming team across simultaneous mobile app and game products, building the technical foundations, reusable tools and delivery practices that helped teams ship reliably.</p>
+            <div class="case-columns">
+              <div class="mini"><strong>Systems</strong><span>In-house engines, reusable libraries, APIs, SQL/database systems and mobile/web architecture.</span></div>
+              <div class="mini"><strong>Execution</strong><span>Technical feasibility, implementation tradeoffs, issue triage, QA and release coordination across concurrent work.</span></div>
+              <div class="mini"><strong>Bridge role</strong><span>Translate product intent into engineering reality and technical complexity into practical stakeholder decisions.</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case panel">
+          <div class="case-side warm">
+            <div class="kicker">Distributed delivery</div>
+            <h3>Racino</h3>
+            <div class="case-role">Game Producer | Jan 2023–Sep 2023 | Fully remote</div>
+            <div class="metric">Distributed team</div>
+            <div class="metric-note">delivery across specialist disciplines</div>
+          </div>
+          <div class="case-body">
+            <h4>Remote execution</h4>
+            <p>Worked across Unity3D development, blockchain, web engineering and graphic design on a Formula Racing NFT game, coordinating delivery across a geographically distributed team.</p>
+            <div class="case-columns">
+              <div class="mini"><strong>Backlog & delivery</strong><span>Direct experience owning backlog and delivery with a distributed engineering team.</span></div>
+              <div class="mini"><strong>Cross-functional</strong><span>Worked across engineering, blockchain, web and visual disciplines with synchronized development phases.</span></div>
+              <div class="mini"><strong>Product systems</strong><span>Contributed to tier and rarity system design supporting player progression and game depth.</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="cap-title">
+      <div class="section-head">
+        <div><h2 id="cap-title">How I work</h2></div>
+        <p class="section-note">The common thread is practical execution: clarify the problem, make tradeoffs visible, give teams usable requirements, and keep delivery moving through release and follow-through.</p>
+      </div>
+      <div class="cap-grid">
+        <div class="cap"><h3>Product definition</h3><p>Problem framing, user and business constraints, product briefs, requirements, user stories, acceptance criteria and prioritisation.</p></div>
+        <div class="cap"><h3>Delivery operations</h3><p>Roadmaps, backlogs, milestones, sprint planning, RAID-style tracking, dependencies, status visibility and decision logs.</p></div>
+        <div class="cap"><h3>QA & release</h3><p>QA/UAT, defect triage, release readiness, launch checks, live issue handling and post-release iteration.</p></div>
+        <div class="cap"><h3>Technical bridge</h3><p>APIs, integrations, SQL/database understanding, workflow systems and implementation tradeoffs grounded in engineering experience.</p></div>
+        <div class="cap"><h3>Data-informed judgement</h3><p>KPI interpretation, workflow friction, issue-pattern analysis, cohort and A/B-test hypothesis thinking with appropriate analytics support.</p></div>
+        <div class="cap"><h3>Stakeholder translation</h3><p>Clear written decisions, risks, handovers and delivery updates across engineering, design, QA, product, operations and commercial stakeholders.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="products-title">
+      <div class="section-head">
+        <div><h2 id="products-title">Selected product evidence</h2></div>
+        <p class="section-note">Games are presented as the products they actually were: consumer mobile products with audiences, engagement loops, release constraints, quality gates and commercial context.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product">
+          <a class="thumb" href="https://www.youtube.com/watch?v=sVO6RuUsJzU" target="_blank" rel="noopener noreferrer" aria-label="Watch He-Man: Tappers of Grayskull">
+            <img src="https://img.youtube.com/vi/sVO6RuUsJzU/hqdefault.jpg" alt="He-Man: Tappers of Grayskull mobile product thumbnail" loading="lazy" />
+            <span class="badge">Mobile game | Licensed IP</span>
+          </a>
+          <div class="product-body">
+            <h3>He-Man: Tappers of Grayskull</h3>
+            <p>Consumer mobile product with engagement and monetisation loops. Approximate historical scale: 1M+ annual gross and ~10k DAU.</p>
+            <a class="text-link" href="https://www.youtube.com/watch?v=sVO6RuUsJzU" target="_blank" rel="noopener noreferrer">View product video</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="thumb" href="https://www.daltonlearninglab.com/mindful-ocean" target="_blank" rel="noopener noreferrer" aria-label="Open Mindful Ocean Coloring product page">
+            <img src="https://static.wixstatic.com/media/4e2bee_8992c5c3c11d4342960b2c6480630217~mv2.jpg/v1/fill/w_700,h_394,al_c,q_82,enc_avif,quality_auto/4e2bee_8992c5c3c11d4342960b2c6480630217~mv2.jpg" alt="Mindful Ocean Coloring AR mobile app" loading="lazy" />
+            <span class="badge">AR mobile app</span>
+          </a>
+          <div class="product-body">
+            <h3>Mindful Ocean Coloring</h3>
+            <p>Polished mobile app example relevant to UX quality, platform readiness, release discipline and customer-facing product execution.</p>
+            <a class="text-link" href="https://www.daltonlearninglab.com/mindful-ocean" target="_blank" rel="noopener noreferrer">View product page</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="thumb" href="https://www.youtube.com/watch?v=DKlvd7TzZWY" target="_blank" rel="noopener noreferrer" aria-label="Watch Groove Planet">
+            <img src="https://img.youtube.com/vi/DKlvd7TzZWY/hqdefault.jpg" alt="Groove Planet mobile music product thumbnail" loading="lazy" />
+            <span class="badge">Mobile music product</span>
+          </a>
+          <div class="product-body">
+            <h3>Groove Planet</h3>
+            <p>Launch-oriented mobile product with engagement loops, store-facing release readiness and public launch coverage.</p>
+            <a class="text-link" href="https://www.animocabrands.com/announcement/animoca-brands-launches-groove-planet-music-game-for-android-asx-release" target="_blank" rel="noopener noreferrer">View launch article</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="languages-title">
+      <div class="section-head">
+        <div><h2 id="languages-title">Languages</h2></div>
+      </div>
+      <div class="language-grid">
+        <div class="language"><strong>English</strong><span>CEFR B2 (Ecctis)</span></div>
+        <div class="language"><strong>Cantonese</strong><span>Native</span></div>
+        <div class="language"><strong>Mandarin</strong><span>Fluent</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="fine-print">
+      <strong>Contact:</strong> <a href="mailto:calvin@infunity.com">calvin@infunity.com</a> · <a href="https://www.linkedin.com/in/calvinchanht/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://calvinchanht.github.io/" target="_blank" rel="noopener noreferrer">Game & Mobile Portfolio</a><br><br>
+      <strong>Note:</strong> Projects listed include work completed with previous employers and teams. Product names, trademarks, videos, screenshots and associated imagery belong to their respective owners.
+    </div>
+  </footer>
+</body>
+</html>
